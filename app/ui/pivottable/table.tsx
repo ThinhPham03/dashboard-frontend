@@ -19,7 +19,6 @@ const PivotTable: React.FC<PivotTableProps> = ({ salesReport, data }) => {
   const setting = data ? data.setting : ""
   const [pivotState, setPivotState] = useState(setting ? JSON.parse(setting) : {});
 
-
   return (
     <PivotTableUI
       data={salesReport}

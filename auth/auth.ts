@@ -7,8 +7,8 @@ import { authenticateLogin, logout as logoutApi } from '@/app/api/apiAccount';
 const oneWeek = 24 * 60 * 60 * 7;
 
 export const logout = async () => {
-  cookies().delete('authToken');
   logoutApi();
+  cookies().delete('authToken');
   redirect('/');
 }
 

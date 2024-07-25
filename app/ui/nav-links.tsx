@@ -17,14 +17,23 @@ const links = [
 
 export default function NavLinks({ role }: { role: string }) {
   const pathname = usePathname();
-  
+
   const result = links.find(link => link.name === "Accounts");
-  if(!result) {
-    if(role !== "line1") {
+
+  if (!result) {
+    if (role !== "line1") {
       links.push({ name: 'Accounts', href: '/dashboard/accounts', icon: UserCircleIcon });
     }
+  } else {
+    if (role === "line1") {
+      const index = links.findIndex(link => link.name === 'Accounts');
+
+      if (index > -1) {
+        links.splice(index, 1);
+      }
+    }
   }
-  
+
   return (
     <>
       {links.map((link) => {
