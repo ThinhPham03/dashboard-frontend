@@ -1,16 +1,5 @@
 import { TQuerySort } from "react-pivottable/Utilities";
 
-export type Product = {
-  id: string;
-  name: string;
-  vat: number;
-  price: number;
-  laboratory: string;
-  group: string;
-  range: string;
-  branch: string;
-};
-
 export type SalesReport = {
   yyyymm: string;
   productId: string;
@@ -32,30 +21,6 @@ export type SalesReportRow = {
   productName: string;
   customerName: string;
   salesReports: SalesReport[];
-};
-
-export type LaboratoryField = {
-  id: string;
-  name: string;
-};
-export type GroupField = {
-  id: string;
-  name: string;
-};
-export type RangeField = {
-  id: string;
-  name: string;
-};
-export type BranchField = {
-  id: string;
-  name: string;
-};
-
-export type ProductField = {
-  laboratorys: LaboratoryField[];
-  groups: GroupField[];
-  ranges: RangeField[];
-  branchs: BranchField[];
 };
 
 export type PivotSetting = {
